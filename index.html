@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy - Your Ultimate Travel Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" href="static/images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo.png" alt="Travel Buddy" height="30">
+                Travel Buddy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="container hero-content">
+            <h1>Explore the World with Travel Buddy</h1>
+            <p class="lead">Your all-in-one travel planning companion for Destinations, hotels, weather, Transport and attractions</p>
+            
+            <div class="search-container">
+                <div class="search-tabs">
+                    <button class="tab-btn active" data-tab="Travel options">Travel Options</button>
+                    <button class="tab-btn" data-tab="hotels">Hotels</button>
+                    <button class="tab-btn" data-tab="packages">Packages</button>
+                </div>
+                
+                <div class="search-form">
+                    <div class="row g-2">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="from">From</label>
+                                <input type="text" class="form-control" id="from" placeholder="City or Airport">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="to">To</label>
+                                <input type="text" class="form-control" id="to" placeholder="City or Airport">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="departure">Departure</label>
+                                <input type="date" class="form-control" id="departure">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="return">Return</label>
+                                <input type="date" class="form-control" id="return">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="travelers">Travelers</label>
+                                <select class="form-control" id="travelers">
+                                    <option>1 Adult</option>
+                                    <option>2 Adults</option>
+                                    <option>3 Adults</option>
+                                    <option>4 Adults</option>
+                                    <option>Family (2+2)</option>
+                                    <option>Group (5+)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary search-btn" onclick="window.location.href='search.html'">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Travel Buddy?</h2>
+            <div class="row">
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Comprehensive Travel Options</h3>
+                    <p>Compare flights, trains, buses, and rental cars all in one place with real-time pricing and availability.</p>
+                </div>
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Real-Time Weather Updates</h3>
+                    <p>Get accurate weather forecasts for your destination so you can pack appropriately and plan activities.</p>
+                </div>
+                <div class="col-md-4 feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Nearby Attractions</h3>
+                    <p>Discover top-rated tourist spots, hidden gems, and local experiences near your destination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="destinations py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Destinations</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="destination-card">
+                        <img src="https://source.unsplash.com/600x400/?paris" alt="Paris">
+                        <div class="destination-info">
+                            <h3>Paris, France</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5</span>
+                            </div>
+                            <p class="price">From $599</p>
+                            <a href="search.html?destination=paris" class="btn btn-outline-light">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="destination-card">
+                        <img src="https://source.unsplash.com/600x400/?tokyo" alt="Tokyo">
+                        <div class="destination-info">
+                            <h3>Tokyo, Japan</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                            <p class="price">From $899</p>
+                            <a href="search.html?destination=tokyo" class="btn btn-outline-light">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="destination-card">
+                        <img src="https://source.unsplash.com/600x400/?new york" alt="New York">
+                        <div class="destination-info">
+                            <h3>New York, USA</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.0</span>
+                            </div>
+                            <p class="price">From $499</p>
+                            <a href="search.html?destination=new-york" class="btn btn-outline-light">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="search.html" class="btn btn-primary">View All Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Users Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Travel Buddy made planning my European vacation a breeze! I found the best flights and hotels all in one place."</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                            <div>
+                                <h5>Sarah Johnson</h5>
+                                <p>Frequent Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The weather updates saved me from packing all wrong for my trip. The hotel recommendations were spot on!"</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                            <div>
+                                <h5>Michael Chen</h5>
+                                <p>Business Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"I discovered so many amazing attractions near my hotel that I would have missed otherwise. Highly recommend!"</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Patel">
+                            <div>
+                                <h5>Priya Patel</h5>
+                                <p>Family Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get travel tips, exclusive deals, and destination inspiration straight to your inbox.</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                            <button class="btn btn-dark" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Travel Buddy</h5>
+                    <p>Your ultimate travel companion for seamless trip planning and unforgettable experiences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="auth.html">Login/Signup</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel St, Wanderlust City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@travelbuddy.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Travel Buddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | Travel Buddy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" href="static/images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo.png" alt="Travel Buddy" height="30">
+                Travel Buddy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="search.html">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Results Header -->
+    <section class="search-header py-4">
+        <div class="container">
+            <div class="search-summary">
+                <h2>Search Results for <span class="text-primary">Paris, France</span></h2>
+                <p>June 10 - June 17, 2025 • 2 Adults</p>
+            </div>
+            
+            <div class="search-controls">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select class="form-select">
+                                <option>Best Match</option>
+                                <option>Price (Low to High)</option>
+                                <option>Price (High to Low)</option>
+                                <option>Duration (Shortest)</option>
+                                <option>Departure Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <select class="form-select">
+                                <option>Any Price</option>
+                                <option>Under $500</option>
+                                <option>$500 - $1000</option>
+                                <option>$1000 - $1500</option>
+                                <option>Over $1500</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="filter-group">
+                            <label>Stops</label>
+                            <select class="form-select">
+                                <option>Any Stops</option>
+                                <option>Non-stop Only</option>
+                                <option>1 Stop</option>
+                                <option>2+ Stops</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="filter-group">
+                            <label>Airlines</label>
+                            <select class="form-select">
+                                <option>All Airlines</option>
+                                <option>Delta</option>
+                                <option>United</option>
+                                <option>American</option>
+                                <option>Air France</option>
+                                <option>Lufthansa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="search-results py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Column -->
+                <div class="col-lg-3">
+                    <div class="filters-card">
+                        <h4>Filters</h4>
+                        
+                        <div class="filter-section">
+                            <h5>Price</h5>
+                            <div class="price-range">
+                                <input type="range" class="form-range" min="0" max="5000" step="100" value="2500" id="priceRange">
+                                <div class="price-labels">
+                                    <span>$0</span>
+                                    <span>$2500</span>
+                                    <span>$5000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h5>Flight Duration</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="duration1" checked>
+                                <label class="form-check-label" for="duration1">Under 6 hours</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="duration2" checked>
+                                <label class="form-check-label" for="duration2">6-12 hours</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="duration3">
+                                <label class="form-check-label" for="duration3">Over 12 hours</label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h5>Departure Time</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="time1" checked>
+                                <label class="form-check-label" for="time1">Morning (6am-12pm)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="time2" checked>
+                                <label class="form-check-label" for="time2">Afternoon (12pm-6pm)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="time3" checked>
+                                <label class="form-check-label" for="time3">Evening (6pm-12am)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="time4">
+                                <label class="form-check-label" for="time4">Night (12am-6am)</label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h5>Airlines</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="airline1" checked>
+                                <label class="form-check-label" for="airline1">Delta</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="airline2" checked>
+                                <label class="form-check-label" for="airline2">United</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="airline3" checked>
+                                <label class="form-check-label" for="airline3">American</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="airline4" checked>
+                                <label class="form-check-label" for="airline4">Air France</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="airline5" checked>
+                                <label class="form-check-label" for="airline5">Lufthansa</label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary w-100 mt-3">Apply Filters</button>
+                    </div>
+                    
+                    <div class="weather-card mt-4">
+                        <h5>Weather in Paris</h5>
+                        <div class="current-weather">
+                            <div class="weather-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="weather-info">
+                                <div class="temp">72°F</div>
+                                <div class="condition">Sunny</div>
+                            </div>
+                        </div>
+                        <div class="weather-forecast">
+                            <div class="forecast-day">
+                                <div>Mon</div>
+                                <i class="fas fa-sun"></i>
+                                <div>70°</div>
+                            </div>
+                            <div class="forecast-day">
+                                <div>Tue</div>
+                                <i class="fas fa-cloud-sun"></i>
+                                <div>68°</div>
+                            </div>
+                            <div class="forecast-day">
+                                <div>Wed</div>
+                                <i class="fas fa-cloud-showers-heavy"></i>
+                                <div>65°</div>
+                            </div>
+                            <div class="forecast-day">
+                                <div>Thu</div>
+                                <i class="fas fa-cloud-sun"></i>
+                                <div>69°</div>
+                            </div>
+                            <div class="forecast-day">
+                                <div>Fri</div>
+                                <i class="fas fa-sun"></i>
+                                <div>73°</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results Column -->
+                <div class="col-lg-9">
+                    <div class="results-tabs">
+                        <ul class="nav nav-tabs" id="resultsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights" type="button" role="tab" aria-controls="flights" aria-selected="true">Flights</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels" type="button" role="tab" aria-controls="hotels" aria-selected="false">Hotels</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="attractions-tab" data-bs-toggle="tab" data-bs-target="#attractions" type="button" role="tab" aria-controls="attractions" aria-selected="false">Attractions</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="resultsTabContent">
+                            <!-- Flights Tab -->
+                            <div class="tab-pane fade show active" id="flights" role="tabpanel" aria-labelledby="flights-tab">
+                                <div class="result-count">Showing 12 flights from New York to Paris</div>
+                                
+                                <!-- Flight Result 1 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="airline">
+                                            <img src="https://logo.clearbit.com/airfrance.com" alt="Air France">
+                                            <span>Air France</span>
+                                        </div>
+                                        <div class="price">$1,249</div>
+                                    </div>
+                                    <div class="result-body">
+                                        <div class="flight-segment">
+                                            <div class="time">
+                                                <div class="departure">10:30 AM</div>
+                                                <div class="duration">7h 30m</div>
+                                                <div class="arrival">5:00 PM</div>
+                                            </div>
+                                            <div class="route">
+                                                <div class="airports">JFK → CDG</div>
+                                                <div class="stops">Non-stop</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">Details</button>
+                                        <button class="btn btn-primary">Select</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Flight Result 2 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="airline">
+                                            <img src="https://logo.clearbit.com/delta.com" alt="Delta">
+                                            <span>Delta Airlines</span>
+                                        </div>
+                                        <div class="price">$1,099</div>
+                                    </div>
+                                    <div class="result-body">
+                                        <div class="flight-segment">
+                                            <div class="time">
+                                                <div class="departure">8:15 AM</div>
+                                                <div class="duration">8h 15m</div>
+                                                <div class="arrival">4:30 PM</div>
+                                            </div>
+                                            <div class="route">
+                                                <div class="airports">JFK → CDG</div>
+                                                <div class="stops">Non-stop</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">Details</button>
+                                        <button class="btn btn-primary">Select</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Flight Result 3 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="airline">
+                                            <img src="https://logo.clearbit.com/united.com" alt="United">
+                                            <span>United Airlines</span>
+                                        </div>
+                                        <div class="price">$899</div>
+                                    </div>
+                                    <div class="result-body">
+                                        <div class="flight-segment">
+                                            <div class="time">
+                                                <div class="departure">6:45 PM</div>
+                                                <div class="duration">9h 30m</div>
+                                                <div class="arrival">6:15 AM (+1)</div>
+                                            </div>
+                                            <div class="route">
+                                                <div class="airports">JFK → CDG</div>
+                                                <div class="stops">1 Stop (LHR)</div>
+                                            </div>
+                                        </div>
+                                        <div class="flight-segment">
+                                            <div class="time">
+                                                <div class="departure">8:30 AM</div>
+                                                <div class="duration">1h 15m</div>
+                                                <div class="arrival">9:45 AM</div>
+                                            </div>
+                                            <div class="route">
+                                                <div class="airports">LHR → CDG</div>
+                                                <div class="stops"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">Details</button>
+                                        <button class="btn btn-primary">Select</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-outline-primary">Load More Results</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Hotels Tab -->
+                            <div class="tab-pane fade" id="hotels" role="tabpanel" aria-labelledby="hotels-tab">
+                                <div class="result-count">Showing 8 hotels in Paris</div>
+                                
+                                <!-- Hotel Result 1 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="hotel-info">
+                                            <img src="https://source.unsplash.com/200x150/?hotel,paris" alt="Hotel Plaza Athénée">
+                                            <div>
+                                                <h5>Hotel Plaza Athénée</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>5.0 (428 reviews)</span>
+                                                </div>
+                                                <div class="location">
+                                                    <i class="fas fa-map-marker-alt"></i> 25 Avenue Montaigne, Paris
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="amount">$450</div>
+                                            <div class="per-night">per night</div>
+                                            <div class="includes">Includes taxes & fees</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-body">
+                                        <div class="amenities">
+                                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                                            <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                                            <span><i class="fas fa-utensils"></i> Restaurant</span>
+                                            <span><i class="fas fa-spa"></i> Spa</span>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">View Details</button>
+                                        <button class="btn btn-primary">Book Now</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hotel Result 2 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="hotel-info">
+                                            <img src="https://source.unsplash.com/200x150/?hotel,paris,eiffel" alt="Pullman Paris Tour Eiffel">
+                                            <div>
+                                                <h5>Pullman Paris Tour Eiffel</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>4.5 (1123 reviews)</span>
+                                                </div>
+                                                <div class="location">
+                                                    <i class="fas fa-map-marker-alt"></i> 18 Avenue de Suffren, Paris
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="amount">$320</div>
+                                            <div class="per-night">per night</div>
+                                            <div class="includes">Includes taxes & fees</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-body">
+                                        <div class="amenities">
+                                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                                            <span><i class="fas fa-dumbbell"></i> Gym</span>
+                                            <span><i class="fas fa-utensils"></i> Restaurant</span>
+                                            <span><i class="fas fa-parking"></i> Parking</span>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">View Details</button>
+                                        <button class="btn btn-primary">Book Now</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-outline-primary">Load More Results</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Attractions Tab -->
+                            <div class="tab-pane fade" id="attractions" role="tabpanel" aria-labelledby="attractions-tab">
+                                <div class="result-count">Showing 5 attractions in Paris</div>
+                                
+                                <!-- Attraction Result 1 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="attraction-info">
+                                            <img src="https://source.unsplash.com/200x150/?eiffel,tower" alt="Eiffel Tower">
+                                            <div>
+                                                <h5>Eiffel Tower</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>5.0 (42,817 reviews)</span>
+                                                </div>
+                                                <div class="location">
+                                                    <i class="fas fa-map-marker-alt"></i> Champ de Mars, 5 Avenue Anatole France, Paris
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="amount">From $28</div>
+                                            <div class="per-night">per person</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-body">
+                                        <p>The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower.</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Landmark</span>
+                                            <span class="badge bg-primary">Iconic</span>
+                                            <span class="badge bg-primary">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">View Details</button>
+                                        <button class="btn btn-primary">Book Tickets</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Attraction Result 2 -->
+                                <div class="result-card">
+                                    <div class="result-header">
+                                        <div class="attraction-info">
+                                            <img src="https://source.unsplash.com/200x150/?louvre,museum" alt="Louvre Museum">
+                                            <div>
+                                                <h5>Louvre Museum</h5>
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>5.0 (38,452 reviews)</span>
+                                                </div>
+                                                <div class="location">
+                                                    <i class="fas fa-map-marker-alt"></i> Rue de Rivoli, Paris
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <div class="amount">From $17</div>
+                                            <div class="per-night">per person</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-body">
+                                        <p>The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine.</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Museum</span>
+                                            <span class="badge bg-primary">Art</span>
+                                            <span class="badge bg-primary">History</span>
+                                        </div>
+                                    </div>
+                                    <div class="result-footer">
+                                        <button class="btn btn-outline-primary">View Details</button>
+                                        <button class="btn btn-primary">Book Tickets</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-outline-primary">Load More Results</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Travel Buddy</h5>
+                    <p>Your ultimate travel companion for seamless trip planning and unforgettable experiences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="auth.html">Login/Signup</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel St, Wanderlust City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@travelbuddy.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Travel Buddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
